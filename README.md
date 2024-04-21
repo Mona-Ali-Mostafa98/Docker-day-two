@@ -74,3 +74,21 @@ curl 172.18.0.2
 ping 172.18.0.3
 ping successful and return response, because the two containers exist in the same network.
 ```
+
+## Task 3: Explain the difference between Docker volumes and Bind Mount.
+### Docker Volumes
+● It is stored within a directory on the Docker host.
+● Managed by Docker and are isolated from the core functionality of the host machine.
+● Docker volumes can be named and managed independently of containers
+● Can be mounted into multiple containers simultaneously.
+● Deleting a container does not delete the volume.
+● Docker provides commands (docker volume create, docker volume ls, etc.) to manage volumes.
+
+### Docker Bind Mounts
+● Bind mounts have limited functionality compared to volumes.
+● Bind mounts are linked to a specific directory or file on the Docker host filesystem.
+● The file or directory is referenced by its full path on the host machine.
+● When you use a bind mount, a file or directory  on the host is mounted into the container, and allowing the container to access the host's filesystem.
+● It is created on demand if it does not yet exist.
+● You can’t use Docker CLI commands to directly manage bind mounts.
+● Available since the early days of Docker.
